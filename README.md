@@ -2,7 +2,7 @@
 
 ## Overview
 Welcome to the **Mini Quiz Game**! 🎉  
-This is a fun, interactive quiz game designed to test knowledge in a simple and engaging way. The game features colorful graphics, voice prompts, and instant feedback to enhance the user experience.
+This is a fun, interactive trivia quiz built with React. Players answer multiple-choice questions, earn points for correct answers, and see a confetti celebration for each correct response. The game tracks your score, attempts per question, and time spent on each question.
 
 ---
 
