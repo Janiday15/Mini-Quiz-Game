@@ -7,14 +7,13 @@ This is a fun, interactive trivia quiz built with React. Players answer multiple
 ---
 
 ## Features
-- Colorful, kid-friendly interface  
-- Phone-like on-screen keyboard  
-- Audio prompts for questions  
-- Feedback for correct and incorrect answers  
-- Confetti animation for correct answers  
-- Multiple mini quizzes with images  
-- Responsive design for desktop and mobile  
-
+- Colorful, kid-friendly interface
+- Multiple-choice questions with varying difficulty levels
+- Feedback for correct and incorrect answers
+- Confetti animation for correct answers
+- Score tracking and per-question statistics
+- Option to restart the quiz
+- Responsive design for desktop and mobile
 ---
 
 ## Screenshots
