@@ -26,6 +26,9 @@ function Quiz() {
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
   const [times, setTimes] = useState(Array(questions.length).fill(0));
 
+  // NEW: quizStarted state
+  const [quizStarted, setQuizStarted] = useState(false);
+
   const handleClick = (option) => {
     const newAttempts = [...attempts];
     newAttempts[currentQuestion] += 1;
@@ -82,39 +85,13 @@ function Quiz() {
         maxWidth: "500px",
         textAlign: "center"
       }}>
-        {showConfetti && (
-          <Confetti
-            width={window.innerWidth}
-            height={window.innerHeight}
-            numberOfPieces={300}
-            gravity={0.3}
-            recycle={false}
-          />
-        )}
 
-        {showScore ? (
-          <>
-            <h2>Quiz Completed!</h2>
-            <p>Your score: {score} / {questions.length}</p>
-            <h3>Attempts per question:</h3>
-            <ul style={{ textAlign: "left" }}>
-              {questions.map((q, index) => (
-                <li key={index}>
-                  Q{index + 1}: {attempts[index]} attempt(s), {times[index].toFixed(1)}s spent
-                </li>
-              ))}
-            </ul>
-            <button 
-              onClick={() => {
-                setCurrentQuestion(0);
-                setScore(0);
-                setShowScore(false);
-                setFeedback("");
-                setAttempts(Array(questions.length).fill(0));
-                setTimes(Array(questions.length).fill(0));
-                setCorrectStreak(0);
-                setQuestionStartTime(Date.now());
-              }}
+        {!quizStarted ? (
+          // START BUTTON SCREEN
+          <div>
+            <h2>Welcome to the Trivia Quiz!</h2>
+            <button
+              onClick={() => setQuizStarted(true)}
               style={{
                 marginTop: "20px",
                 padding: "10px 20px",
@@ -126,44 +103,95 @@ function Quiz() {
                 cursor: "pointer"
               }}
             >
-              Restart Quiz
+              Start Quiz
             </button>
-          </>
+          </div>
         ) : (
+          // EXISTING QUIZ UI
           <>
-            <h2>{questions[currentQuestion].text}</h2>
-            <div>
-              {questions[currentQuestion].options.map((option, index) => (
+            {showConfetti && (
+              <Confetti
+                width={window.innerWidth}
+                height={window.innerHeight}
+                numberOfPieces={300}
+                gravity={0.3}
+                recycle={false}
+              />
+            )}
+
+            {showScore ? (
+              <>
+                <h2>Quiz Completed!</h2>
+                <p>Your score: {score} / {questions.length}</p>
+                <h3>Attempts per question:</h3>
+                <ul style={{ textAlign: "left" }}>
+                  {questions.map((q, index) => (
+                    <li key={index}>
+                      Q{index + 1}: {attempts[index]} attempt(s), {times[index].toFixed(1)}s spent
+                    </li>
+                  ))}
+                </ul>
                 <button 
-                  key={index} 
-                  onClick={() => handleClick(option)}
+                  onClick={() => {
+                    setCurrentQuestion(0);
+                    setScore(0);
+                    setShowScore(false);
+                    setFeedback("");
+                    setAttempts(Array(questions.length).fill(0));
+                    setTimes(Array(questions.length).fill(0));
+                    setCorrectStreak(0);
+                    setQuestionStartTime(Date.now());
+                  }}
                   style={{
-                    margin: "5px",
-                    padding: "10px",
+                    marginTop: "20px",
+                    padding: "10px 20px",
                     fontSize: "16px",
                     borderRadius: "8px",
                     backgroundColor: "#00aaff",
                     color: "white",
                     border: "none",
-                    cursor: "pointer",
-                    width: "100%"
+                    cursor: "pointer"
                   }}
                 >
-                  {option}
+                  Restart Quiz
                 </button>
-              ))}
-            </div>
-            <h3>{feedback}</h3>
+              </>
+            ) : (
+              <>
+                <h2>{questions[currentQuestion].text}</h2>
+                <div>
+                  {questions[currentQuestion].options.map((option, index) => (
+                    <button 
+                      key={index} 
+                      onClick={() => handleClick(option)}
+                      style={{
+                        margin: "5px",
+                        padding: "10px",
+                        fontSize: "16px",
+                        borderRadius: "8px",
+                        backgroundColor: "#00aaff",
+                        color: "white",
+                        border: "none",
+                        cursor: "pointer",
+                        width: "100%"
+                      }}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+                <h3>{feedback}</h3>
+              </>
+            )}
           </>
         )}
+
       </div>
     </div>
   );
 }
 
 export default Quiz;
-
-
 
 
 
