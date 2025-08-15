@@ -20,13 +20,13 @@ This is a fun, interactive quiz game designed to test knowledge in a simple and 
 ## Screenshots
 Here are some images of the game in action:
 
-![Screenshot 1](./Screenshots/HomeScreen.png)  
+![Screenshot 1](.public/Screenshots/HomeScreen.png)  
 *Main game screen*
 
-![Screenshot 2](./Screenshots/QuestionScreen.png)  
+![Screenshot 2](.public/Screenshots/QuestionScreen.png)  
 *Question interface*
 
-![Screenshot 3](./Screenshots/EndOfQuizScreen.png)  
+![Screenshot 3](.public/Screenshots/EndOfQuizScreen.png)  
 *Results*
 
 ---
