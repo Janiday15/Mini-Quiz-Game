@@ -21,13 +21,16 @@ This is a fun, interactive quiz game designed to test knowledge in a simple and 
 Here are some images of the game in action:
 
 ![Screenshot 1](./Screenshots/HomeScreen.png)  
-*Main game screen*
+*Main game screen*<img width="1440" height="815" alt="HomeScreen" src="https://github.com/user-attachments/assets/d815dabe-c657-4922-9d1c-5a93225ffd90" />
+
 
 ![Screenshot 2](./Screenshots/QuestionScreen.png)  
-*Question interface*
+*Question interface*<img width="1431" height="816" alt="QuestionScreen" src="https://github.com/user-attachments/assets/5408b8e8-386b-4f2a-84d8-7082e902cbf9" />
+
 
 ![Screenshot 3](./Screenshots/EndOfQuizScreen.png)  
-*Results*
+*Results*<img width="1438" height="821" alt="EndOfQuizScreen" src="https://github.com/user-attachments/assets/7b74ef6a-4c46-4641-b938-95769f43d5d5" />
+
 
 ---
 
